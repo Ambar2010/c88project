@@ -35,8 +35,8 @@ function new_image()
 		ball_obj.scaleToWidth(50);
 		ball_obj.scaleToHeight(50);
 		ball_obj.set({
-			top:ball_obj,
-			left:ball_obj
+			top:ball_y,
+			left:ball_x
 		});
 		canvas.add(ball_obj);
 	});
@@ -50,6 +50,7 @@ function my_keydown(e)
 	console.log(keyPressed);
 	if((ball_x==hole_x)&&(ball_y==hole_y)){
 		canvas.remove(ball_obj);
+		console.log("You have Hit the Goal!!!");
 		document.getElementById("hd3").innerHTML = "You have Hit the Goal!!!";
 	document.getElementById("myCanvas").style.borderColor = "red";
 	}
@@ -57,7 +58,7 @@ function my_keydown(e)
 	And id coordinates matches them remove ball image, 
 	display "GAME OVER!!!" 
 	and make canvas border 'red'. */
-	
+	else {
 		if(keyPressed == '38')
 		{
 			up();
@@ -78,7 +79,7 @@ function my_keydown(e)
 			right();
 			console.log("right");
 		}
-	
+	}
 	
 	function up()
 	{
